@@ -141,6 +141,14 @@ def analyze_results(results, simulations):
 
 st.title("Combat Balance Sandbox")
 
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # -------------------------
 # Sidebar Inputs
 # -------------------------
@@ -249,4 +257,5 @@ st.dataframe(df)
 df = pd.DataFrame.from_dict([round_stats])
 df.index = ["Stats"]
 st.subheader("Round Statistics")
+
 st.dataframe(df)
